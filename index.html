@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lost Item Tracker</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🔎 Lost Item Tracker</h1>
+
+        <p class="subtitle">
+            Real-Time Bluetooth Item Tracking
+        </p>
+
+        <div class="card">
+
+            <h2>🏷️ My Item</h2>
+
+            <div class="item-icon">🔑</div>
+
+            <h2 id="itemName">My Keys</h2>
+
+            <p>Bluetooth Address:</p>
+            <p id="address">--</p>
+
+            <p>Signal Strength</p>
+
+            <div class="signal">
+                <div id="signalBar" class="signal-bar"></div>
+            </div>
+
+            <p id="rssi">RSSI: --</p>
+
+            <div id="status" class="status waiting">
+                WAITING...
+            </div>
+
+        </div>
+
+        <div class="info">
+
+            <h3>📡 Real-Time Status</h3>
+
+            <p id="lastUpdate">
+                Waiting for Bluetooth data...
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
